@@ -8,7 +8,7 @@ const Error = () => {
             <Image src={img} width={1400} height={50}>
 
             </Image>
-            <Link href='/'>Back to home</Link>
+            <Link className='btn btn-primary' href='/'>Back to home</Link>
         </div>
     );
 };
