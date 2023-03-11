@@ -6,10 +6,11 @@ import Link from "next/link";
 import Header from "@/components/Header/Header";
 import Banner from "@/components/Banner/Banner";
 import Footer from "@/components/Footer/Footer";
+import Blog from "./comments/blog";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({blogs}) {
   return (
     <>
       <Head>
@@ -21,6 +22,15 @@ export default function Home() {
       <main >
         <Header/>
         <Banner/>
+        <div className="p-4 text-center">
+             <div className=" mt-5 grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
+          {blogs.map((ele) => (
+            <Blog ele={ele}/>
+          ))}
+          </div>
+          <Link className="btn btn-primary  mt-5" href="/blogs">See More</Link>
+        </div>
+     
         <Footer/>
         {/* <h1 className="text-3xl">Habibur Rahman</h1>
         <Link className=" text-sm text-blue-300" href="/blogs">View Blogs</Link> */}
@@ -29,3 +39,15 @@ export default function Home() {
     </>
   );
 }
+export const getStaticProps = async () => {
+  const res = await fetch(
+    "https://jsonplaceholder.typicode.com/posts?_limit=4"
+  );
+  const blog = await res.json();
+
+  return {
+    props: {
+      blogs: blog,
+    },
+  };
+};
