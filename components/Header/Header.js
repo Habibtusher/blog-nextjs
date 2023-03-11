@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="navbar  bg-base-300">
+    <div className="navbar  bg-base-300 px-12">
       <div
         style={{
           width: "100%",
