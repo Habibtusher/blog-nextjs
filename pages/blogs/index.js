@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import Blog from "../comments/blog";
+import Blog from "../../components/blog";
 
 const Blogs = ({ blogs }) => {
   return (

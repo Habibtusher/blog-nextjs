@@ -6,7 +6,7 @@ import Link from "next/link";
 import Header from "@/components/Header/Header";
 import Banner from "@/components/Banner/Banner";
 import Footer from "@/components/Footer/Footer";
-import Blog from "./comments/blog";
+import Blog from "../components/blog";
 
 const inter = Inter({ subsets: ["latin"] });
 
